@@ -1,3 +1,11 @@
+/*
+ This service has a configure() method that should be called at startup of the component, 
+ the other are only the properties specific to the component instance we want to "expose", 
+ it includes here the instance Id as well as the WebPart properties (we also could have mapped each single property to only expose the one we want). 
+ 
+ Notice in the configure() method I set a watch guard to avoid that the current instance of the service is configured more than once by mistake, 
+ that will ensure that we use a component-specific instance from the child scope.
+ */
 import { BaseComponentContext } from "@microsoft/sp-component-base";
 import { ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 import { ISpContextServiceLabWebPartProps } from "../webparts/spContextServiceLab/SpContextServiceLabWebPart";
