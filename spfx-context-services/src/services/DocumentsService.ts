@@ -1,3 +1,8 @@
+/*
+This service will be responsible for what we want to display in our WebPart, 
+since it is dependent on the component specific service, 
+we will need to provide a specific instance of it in the child scope.
+*/
 import { ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 import { ListServiceKey } from "./ListsService";
 import { ComponentContextServiceKey } from "./ComponentContextService";
