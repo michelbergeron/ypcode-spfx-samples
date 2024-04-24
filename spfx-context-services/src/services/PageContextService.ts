@@ -1,3 +1,9 @@
+/*
+This service has a configure() method that should be called at startup of the component, 
+the other are only the properties from the page context we want to "expose". 
+
+This service is global to the page, so it can remain located in the root scope and we will ensure that it is configured properly.
+*/
 import { BaseComponentContext } from "@microsoft/sp-component-base";
 import { ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 
