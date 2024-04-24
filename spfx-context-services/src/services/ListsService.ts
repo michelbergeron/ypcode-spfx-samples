@@ -1,3 +1,6 @@
+/* 
+This one is a generic service for fetching SharePoint list information, we can leave it at the root scope.
+*/
 import { IList } from "../models/IList";
 import { ServiceScope, ServiceKey } from "@microsoft/sp-core-library";
 import { ComponentContextServiceKey } from "./ComponentContextService";
