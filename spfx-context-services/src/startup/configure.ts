@@ -1,3 +1,18 @@
+/*
+I'll let you read the comments in this code exhibit above to understand what we do. 
+
+The idea is that we always create a child scope that will pertain to the component instance, 
+all the services from the root scope will be accessible from it anyway. 
+
+The "tricky" part is that all the services that depends on the component specific services should be instantiated in that new child scope. 
+That is probably not the best since, some of them can be generic enough that they actually don't need to be duplicated, 
+but since they are created with the service scope, it seems to be the only way. 
+
+This configure() method has then to be called in the init event of the component (the WebPart) class, 
+and a reference to the newly created child service scope should be kept. 
+
+This child scope reference can then be passed as property to the React component we use as you can see in the render() method.
+*/
 import { ServiceScope } from "@microsoft/sp-core-library";
 import { BaseComponentContext } from "@microsoft/sp-component-base";
 import { ComponentContextServiceKey, ComponentContextService } from "../services/ComponentContextService";
